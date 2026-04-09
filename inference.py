@@ -33,7 +33,6 @@ from typing import Optional, Any, Dict, List
 import re
 
 from dotenv import load_dotenv
-import requests
 from openai import OpenAI
 from environment import CorpExpenseAudit
 from graders import run_easy_grader, run_medium_grader, run_hard_grader, print_grader_results
@@ -79,7 +78,7 @@ class ExpenseAuditAgent:
         self.api_key = self._get_api_key() or "validation-only-key"
         
         self.client = OpenAI(
-            api_key=api_key,
+            api_key=self.api_key,
             base_url=api_base_url if api_base_url else None
         )
         

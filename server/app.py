@@ -12,8 +12,8 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from environment import CorpExpenseAudit
-from graders import run_easy_grader, run_medium_grader, run_hard_grader
+from test.environment import CorpExpenseAudit
+from test.graders import run_easy_grader, run_medium_grader, run_hard_grader
 
 app = FastAPI(
     title="CorpExpenseAudit OpenEnv API",

@@ -708,14 +708,14 @@ class CorpExpenseAudit:
     # ============ OpenEnv Async API ============
     async def async_reset(self) -> 'StepResult':
         """Async reset - returns StepResult with Observation."""
-        from models import StepResult, Observation
+        from test.models import StepResult, Observation
         state_dict = self.reset()
         obs = Observation(state=state_dict, info={})
         return StepResult(observation=obs, reward=0.0, done=False, info={})
     
     async def async_step(self, action: Dict[str, Any]) -> 'StepResult':
         """Async step - accepts dict action, returns StepResult."""
-        from models import StepResult, Observation
+        from test.models import StepResult, Observation
         state_dict, reward, done, info = self.step(action)
         obs = Observation(state=state_dict, info=info)
         return StepResult(observation=obs, reward=reward, done=done, info=info)

@@ -13,17 +13,17 @@ def run_validations():
         
         # Test 1: Import models
         print("\n[1/7] Testing model imports...")
-        from models import ExpenseClaim, AuditState, ClaimCategory
+        from test.models import ExpenseClaim, AuditState, ClaimCategory
         print("✓ Models loaded successfully")
         
         # Test 2: Import environment
         print("\n[2/7] Testing environment class...")
-        from environment import CorpExpenseAudit
+        from test.environment import CorpExpenseAudit
         print("✓ Environment class loaded")
         
         # Test 3: Import graders
         print("\n[3/7] Testing graders...")
-        from graders import TaskGrader, run_easy_grader, run_medium_grader, run_hard_grader
+        from test.graders import TaskGrader, run_easy_grader, run_medium_grader, run_hard_grader
         print("✓ Graders loaded")
         
         # Test 4: Initialize environment
